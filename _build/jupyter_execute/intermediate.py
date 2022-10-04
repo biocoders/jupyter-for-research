@@ -62,16 +62,32 @@ print('---')
 get_ipython().system(' ls {mount_folder}')
 
 
+# ## Modularizing your code
+
+# In[7]:
+
+
+import my_python_module
+
+get_ipython().run_line_magic('pinfo2', 'my_python_module.foo')
+
+
+# In[8]:
+
+
+my_python_module.foo()
+
+
 # ## Jupyter magic
 # There are lots of different ones, but here are some of my favourites
 
-# In[7]:
+# In[9]:
 
 
 get_ipython().run_cell_magic('time', '', 'import time\n\ntime.sleep(1)\nprint("hello world!")\n')
 
 
-# In[8]:
+# In[10]:
 
 
 import numpy as np
@@ -84,7 +100,7 @@ get_ipython().run_line_magic('timeit', '-n 1000 np.sqrt(x)')
 # 
 # You can use libraries like plotly, which use HTML/JS to create interative plots
 
-# In[9]:
+# In[11]:
 
 
 import plotly.express as px
@@ -99,7 +115,7 @@ fig.show()
 # You can click on debugging here, then open the tab
 # ![](./assets/debugging-button.png)
 
-# In[10]:
+# In[12]:
 
 
 for k in [1, 5, 10, 0, 3]:
